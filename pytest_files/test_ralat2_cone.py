@@ -1,5 +1,5 @@
 import pytest
-from ralat1_calculation import *
+from ralat2_cone import *
 # import sys
 
 # def test_myoutput(capsys):  # or use "capfd" for fd-level
@@ -12,11 +12,11 @@ from ralat1_calculation import *
 #     captured = capsys.readouterr()
 #     assert captured.out == "next\n"
 
-def test_calculation():
-    result = calculation(10,2)
-    assert result == 5
+def test_kira_luas_permukaan_kon():
+    result = kira_luas_permukaan_kon(2,3)
+    assert result == 35.23
 
-def test_get_input(monkeypatch):
+def test_dapat_jejari_tinggi(monkeypatch):
     # Simulate user input for jejari and tinggi
     inputs = iter(["3", "7"])  # Mock input values
     
@@ -24,12 +24,12 @@ def test_get_input(monkeypatch):
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
     
     # Run the function and check the output
-    result = get_input()
+    result = dapat_jejari_tinggi()
     assert result == (3, 7)
 
 def test_main(monkeypatch, capsys):
     # Define a function to simulate multiple user inputs
-    user_inputs = ["10","2"]
+    user_inputs = ["2","3"]
 
     def mock_input(_):
         return user_inputs.pop(0)
@@ -42,5 +42,5 @@ def test_main(monkeypatch, capsys):
 
     # Capture the printed output
     captured = capsys.readouterr()
-    assert captured.out.strip() == "Division = 5.0"
+    assert captured.out.strip() == "luas permukaan kon = 35.23"
 
