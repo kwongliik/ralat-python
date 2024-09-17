@@ -10,10 +10,11 @@ def get_input():
     y = int(input("Masukkan nombor integer kedua:"))
     return e, f
 
-def main():
+def main_calculation():
     (x, y) = get_input(a, b)
     divide = calculations(x, y)    
     print(f"Division = {divide}")
 
+# JANGAN ubah kod di bawah baris ini!
 if __name__ == "__main__":
-    main()
+    main_calculation()

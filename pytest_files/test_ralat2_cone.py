@@ -27,7 +27,7 @@ def test_dapat_jejari_tinggi(monkeypatch):
     result = dapat_jejari_tinggi()
     assert result == (3, 7)
 
-def test_main(monkeypatch, capsys):
+def test_main_cone(monkeypatch, capsys):
     # Define a function to simulate multiple user inputs
     user_inputs = ["2","3"]
 
@@ -38,7 +38,7 @@ def test_main(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', mock_input)
 
     # Call the main function, which uses input() and prints the result
-    main()
+    main_cone()
 
     # Capture the printed output
     captured = capsys.readouterr()

@@ -27,7 +27,7 @@ def test_get_input(monkeypatch):
     result = get_input()
     assert result == (3, 7)
 
-def test_main(monkeypatch, capsys):
+def test_main_calculation(monkeypatch, capsys):
     # Define a function to simulate multiple user inputs
     user_inputs = ["10","2"]
 
@@ -38,7 +38,7 @@ def test_main(monkeypatch, capsys):
     monkeypatch.setattr('builtins.input', mock_input)
 
     # Call the main function, which uses input() and prints the result
-    main()
+    main_calculation()
 
     # Capture the printed output
     captured = capsys.readouterr()
